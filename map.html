@@ -26,7 +26,7 @@
       <div class="col-2" style="background-color:lavender;">
         <div class="classWithPad">
           <div class= "row">
-          <div class="col-2">Firm </div>
+          <div class="col-2">Firm:</div>
           <div class="col-10" id="firm"></div>
         </div>
       </div>
@@ -151,7 +151,7 @@ var marker = "undefined";
 var myLatLng = 0;
 window.onload = load;
 if(typeof(EventSource) !== "undefined") {
-    var source = new EventSource("mapserver.php");
+    var source = new EventSource("https://salty-mountain-18770.herokuapp.com");
     source.onmessage = function(event) {
         var raw = event.data;
         data = raw.split(',');
@@ -193,7 +193,7 @@ if(typeof(EventSource) !== "undefined") {
     document.getElementById("map").innerHTML = "Sorry, your browser does not support server-sent events...";
 }
 function load() {
-  var lat = new google.maps.LatLng(27.686471900000001,85.317513000000005);
+  var lat = new google.maps.LatLng(27.67022157595957,85.33891081809998);
   map = new google.maps.Map(document.getElementById('map'), {
     zoom: 18,
     center: lat
